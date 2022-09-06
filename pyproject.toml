@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "lrc-plotter"
+version = "0.1.0"
+description = ""
+authors = ["Jakub Rozek <jrozek@redhat.com>"]
+
+[tool.poetry.scripts]
+lrc-plotter = "lrc_plotter.lrc_plotter:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+matplotlib = "^3.6.0"
+cycler = "^0.11.0"
+lrc-file = {git = "https://github.com/LNST-project/lrc-file", branch = "main"}
+lnst = {git = "https://github.com/LNST-project/lnst"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
