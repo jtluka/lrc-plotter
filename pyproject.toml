@@ -11,8 +11,8 @@ lrc-plotter = "lrc_plotter.lrc_plotter:main"
 python = "^3.9"
 matplotlib = "^3.6.0"
 cycler = "^0.11.0"
-lrc-file = {git = "https://github.com/LNST-project/lrc-file", branch = "main"}
-lnst = {git = "https://github.com/LNST-project/lnst"}
+lrc-file = {git = "https://github.com/LNST-project/lrc-file.git", branch = "main"}
+lnst = {git = "https://github.com/LNST-project/lnst.git", branch = "master"}
 
 [tool.poetry.group.dev]
 optional = true
