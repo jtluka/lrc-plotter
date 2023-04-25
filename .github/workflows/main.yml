@@ -34,4 +34,6 @@ jobs:
     - name: Set up system requirements                                          
       run: curl -sSL https://install.python-poetry.org | python3 - --version 1.4.1
     - name: poetry install check                                                
-      run: poetry install 2>&1
+      run: |
+        poetry config --list
+        poetry install 2>&1
