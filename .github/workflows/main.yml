@@ -35,5 +35,5 @@ jobs:
       run: curl -sSL https://install.python-poetry.org | python3 - --version 1.4.1
     - name: poetry install check                                                
       run: |
-        poetry config --list
-        poetry install 2>&1
+        poetry install 2>&1 | tee poetry-output.log
+        grep -q -E  "^Warning:" poetry-output.log && echo "warnings present in poetry install log, please fix" && false
