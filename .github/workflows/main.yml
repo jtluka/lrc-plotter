@@ -22,10 +22,6 @@ jobs:
         gcc \
         libxml2-dev \
         libxslt-dev \
-        qemu-kvm \
-        libvirt-daemon-system \
-        libvirt-clients \
-        bridge-utils \
         libvirt-dev \
         libnl-3-200 \
         libnl-route-3-dev \
