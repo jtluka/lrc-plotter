@@ -32,4 +32,4 @@ jobs:
     - name: poetry install check                                                
       run: |
         poetry install 2>&1 | tee poetry-output.log
-        grep -q -E  "^Warning:" poetry-output.log && echo "warnings present in poetry install log, please fix" && false
+        if grep -q -E "^Warning:" poetry-output.log; then echo "warnings present in poetry install log, please fix"; false; else true; fi
