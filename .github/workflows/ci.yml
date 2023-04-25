@@ -1,0 +1,35 @@
+name: CI test for lrc-plotter
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  poetry-install:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.9"
+    - name: Source branch checkout
+      uses: actions/checkout@v2
+    - name: install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y iputils-* \
+        ethtool \
+        gcc \
+        libxml2-dev \
+        libxslt-dev \
+        libvirt-dev \
+        libnl-3-200 \
+        libnl-route-3-dev \
+        git \
+        libnl-3-dev
+    - name: Set up system requirements
+      run: curl -sSL https://install.python-poetry.org | python3 - --version 1.3.1
+    - name: poetry install check
+      run: |
+        poetry install 2>&1 | tee poetry-output.log
+        if grep -q -E "^Warning:" poetry-output.log; then echo "warnings present in poetry install log, please fix"; false; else true; fi
