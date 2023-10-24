@@ -7,7 +7,6 @@ from argparse import ArgumentParser
 from cycler import cycler
 from pathlib import Path
 
-from lnst.Controller.Recipe import import_recipe_run
 from lrc_file.LrcFile import LrcFile, Run
 from .PlotConfig import PlotConfig
 
