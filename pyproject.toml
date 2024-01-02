@@ -11,7 +11,7 @@ lrc-plotter = "lrc_plotter.lrc_plotter:main"
 python = "^3.9"
 matplotlib = "^3.6.0"
 cycler = "^0.11.0"
-lrc-file = {git = "https://github.com/LNST-project/lrc-file.git", branch = "main"}
+lrc-file = {git = "https://github.com/jtluka/lrc-file.git", rev = "olichtne-refactor-measurements-evaluations"}
 
 [tool.poetry.group.dev]
 optional = true
