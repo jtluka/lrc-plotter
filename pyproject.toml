@@ -8,7 +8,7 @@ authors = ["Jakub Rozek <jrozek@redhat.com>"]
 lrc-plotter = "lrc_plotter.lrc_plotter:main"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9, <3.14"
 matplotlib = "^3.6.0"
 cycler = "^0.11.0"
 lrc-file = {git = "https://github.com/LNST-project/lrc-file.git", branch = "main"}
